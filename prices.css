@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(-45deg, #a53ceb, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px 0px;
+  height: 100px;
+}
+
+.icons {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  min-width: 400px;
+  align-items: center;
+}
+
+.icons a {
+  position: relative;
+  font-size: 28px;
+  font-family: "Roboto", Arial;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 0.8px;
+}
+
+.icons a:hover {
+  color: #fff;
+}
+.icons a::after {
+  content: "";
+  background-color: #fff;
+  height: 3px;
+  width: 0;
+  transition: 0.3s;
+  margin: auto;
+  display: block;
+  margin-top: 8px;
+}
+
+.icons a:hover::after {
+  width: 100%;
+}
+
+.logo {
+  font-size: 40px;
+  font-family: "Roboto", Arial;
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  color: #fff;
+  text-decoration: none;
+}
+.container {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0px 100px;
+  overflow: hidden;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+  height: 500px;
+  padding: 90px 40px;
+  min-width: 200px;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.shell:hover {
+  scale: 1.17;
+  margin: 0 50px;
+}
+
+.tier {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: "Roboto", Arial;
+  display: inline-block;
+}
+button {
+  width: 80%;
+  height: 20%;
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+  color: #fff;
+  background-color: rgb(20, 114, 202);
+  cursor: pointer;
+  font-family: "Roboto", Arial;
+}
+.head {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: content;
+}
+img {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+.disc {
+  font-family: "Roboto", Arial;
+
+  font-size: 16px;
+}
+.foot {
+  text-decoration: none;
+  color: black;
+  position: absolute;
+  bottom: 10px;
+  font-family: "Roboto", Arial;
+  color: #fff;
+}
+.shell {
+  background-color: rgb(50, 50, 73);
+  transition: 0.3s ease-in-out;
+  z-index: 2;
+  position: relative;
+  border-radius: 10px;
+}
+.shell::after {
+  content: "";
+  background-color: rgb(96, 228, 96);
+
+  height: 90px;
+  width: 100%;
+  z-index: 0;
+  position: absolute;
+  transition: 0.5s;
+  bottom: 0;
+  display: none;
+}
+
+#inter::after {
+  background-color: orange;
+}
+
+#pro::after {
+  background-color: red;
+}
+.shell:hover::after {
+  display: block;
+  animation: slide 0.95s;
+  animation-fill-mode: forwards;
+  transform: skewY(10deg);
+}
+@media screen and (max-width: 450px) {
+  .container {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 0px !important;
+    overflow: scroll;
+  }
+  .box {
+    scale: 0.4;
+  }
+}
+
+@keyframes slide {
+  0% {
+  }
+
+  100% {
+    transform: translateY(-340px);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
